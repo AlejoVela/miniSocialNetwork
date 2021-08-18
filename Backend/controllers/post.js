@@ -5,7 +5,7 @@ const createPost = async (req, res) => {
         return res.status(401).send("Process Failed: There'r empty fields");
     
     let post = new Post({
-        userId: "611d1d5994aeab1f449c5d31", //req.user._id,
+        userId: req.user.pass, //req.user._id,
         text: req.body.text,
         hashtag: req.body.hashtag, //añadir array de hashtag
     });
